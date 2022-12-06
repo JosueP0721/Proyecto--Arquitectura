@@ -1,0 +1,37 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    img {
+        object-fit: cover;
+        height: 100%;
+    }
+    .imagen:nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+    .imagen:nth-child(3) {
+        grid-row: 3 / 5;
+        grid-column: 2 / 3;
+    }
+    .imagen:nth-child(6) {
+        grid-row: 2 / 4;
+    }
+    @include m.desktop {
+        grid-template-columns: repeat(3, 1fr);
+        img {
+            height: auto;
+        }
+        .imagen:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 3;
+        }
+        .imagen:nth-child(4) {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+        }
+    }
+}

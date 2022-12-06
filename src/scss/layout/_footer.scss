@@ -1,0 +1,19 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    height: 50rem;
+    background-image: url(../img/footer_bg.webp);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    p {
+        color: v.$blanco;
+        margin: 0;
+        text-align: center;
+        padding: 3rem 0 1rem 0;
+    }
+}

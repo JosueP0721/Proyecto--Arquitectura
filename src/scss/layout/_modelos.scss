@@ -1,0 +1,50 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.modelo {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    margin-bottom: 5rem;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    @include m.tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contenido-modelo {
+        padding: 5rem;
+        background-color: v.$blanco;
+    }
+    &.basico {
+        background-image: url(../img/modelo_basico.webp);
+        @include m.tablet {
+            background-position: top right;
+            .contenido-modelo {
+                grid-row: 2 / 3;
+                padding: 2rem 2rem 2rem 0;
+            }
+        }
+    }
+    &.premier {
+        background-image: url(../img/modelo_premier.webp);
+        @include m.tablet {
+            background-position: top left;
+            .contenido-modelo {
+                grid-column: 2 / 3;
+                padding: 2rem;
+            }
+        }
+    }
+    &.elite {
+        background-image: url(../img/modelo_elite.webp);
+        @include m.tablet {
+            background-position: top right;
+            .contenido-modelo {
+                grid-column: 1 / 2;
+                padding: 2rem 2rem 2rem 0;
+            }
+        }
+    }
+}

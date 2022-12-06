@@ -1,0 +1,23 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    background-image: url(../img/nosotros.webp);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    @include m.desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .contenido-nosotros {
+        background-color: v.$blanco;
+        padding: 5rem;
+        @include m.desktop {
+            grid-column: 2 / 4;
+        }
+        h2, p {
+            margin-bottom: 1rem;
+        }   
+    }
+}
